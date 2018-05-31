@@ -7,7 +7,7 @@ Multi-threading demos for exploring all synchronisation objects like Mutex, Sema
 For example: Suppose there are 5 Signals, which expires in Round-robin fashion. If Signal-1 is expired then it becomes GREEN to RED and Signal-2 becomes RED to GREEN. Same way next successive numbered signal becomes GREEN after expiry.
    
 The program should print every signals status on expiry.
-
+```C
 Signal-1: Green
 Signal-2: Red
 Signal-3: Red
@@ -23,5 +23,7 @@ Signal-4: Red
 Signal-5: Red
 
 ........
+
+```
 
 This problem is solved by using one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry.
