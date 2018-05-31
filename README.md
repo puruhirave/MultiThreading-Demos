@@ -30,7 +30,7 @@ Signal-5: Red
 Here provided two solutions for this problem.
 
 ## Single threaded Traffic signal
-This problem is solved by using single signal thread and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry. The main thread will act as Signal Timer.
+This problem is solved by using only one signal thread and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry. The main thread will act as Signal Timer.
 
 ## Multi-threaded Traffic signal
 This problem is solved by using multiple threads such as each thread for dedicated indexed Signal and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry.
