@@ -6,7 +6,7 @@ Multi-threading use cases explained with different scenarios using all kinds of 
 
 For example: Suppose there are 5 Signals, which expires in Round-robin fashion. If Signal-1 is expired then it becomes GREEN to RED and Signal-2 becomes RED to GREEN. Same way next successive numbered signal becomes GREEN after expiry.
    
-The program should print every signals status on expiry.
+This problem is solved by using Mutex and Condition variable. Every Signal will print signal status on expiry.
 ```C
 First Signal-1 is Green then status is printed like,
 
@@ -16,7 +16,8 @@ Signal-3: Red
 Signal-4: Red
 Signal-5: Red
 
-After Signal-1 is expired, it will broadcast to all Signals about expiry status and then Signal-2 becomes GREEN and all Signals will print current state.
+After Signal-1 is expired, it will broadcast to all Signals about expiry status and then Signal-2 becomes GREEN 
+and all Signals will print current state.
 
 Signal-1: Red
 Signal-2: Green
