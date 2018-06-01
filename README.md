@@ -2,7 +2,7 @@
 Multi-threading use cases explained with different scenarios using all kinds of synchronisation objects like Mutex, Semaphore, Condition variables.
 
 # 1. Traffic Signal
-   Problem: Implement a Traffic signal program with either single threaded or multi-treaded solutions. When one signal becomes GREEN others signals will becomes RED. After the GREEN signal expires it becomes RED and the successive next signal will becomes GREEN and others become RED.
+   Problem: Implement a Traffic signal program with either single threaded or multi-treaded solutions. When first Signal becomes GREEN other Signals will become RED. After the GREEN Signal expires it becomes RED and the successive next Signal will become GREEN and others will become RED.
 
 For example: Suppose there are 5 Signals, which expires in Round-robin fashion. If Signal-1 is expired then it becomes GREEN to RED and Signal-2 becomes RED to GREEN. Same way next successive numbered signal becomes GREEN after expiry.
    
