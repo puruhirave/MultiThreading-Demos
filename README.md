@@ -31,13 +31,13 @@ Signal-5: Red
 
 ```
 
-Here provided two solutions for this problem.
+Provided two solutions for this problem.
 
 ## Single threaded Traffic signal
-TrafficSignal_1: This is implemented by using only one Signal thread and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry. The main thread will act as Signal Timer.
+TrafficSignal_1: This pregram is implemented by using only one Signal thread and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry. The main thread will act as Signal Timer.
 
 ## Multi-threaded Traffic signal
-TrafficSignal_2: This is implemented by using multiple Signal threads such as each thread for dedicated indexed Signal and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry.
+TrafficSignal_2: This program is implemented by using multiple Signal threads such as each thread for dedicated indexed Signal and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry.
 
-Every signal has given 'signalId' which is checked against 'curr_green_signal' after expiry.
+Every signal thread has given 'signalId' which is checked against 'curr_green_signal' after expiry.
 The main thread will act as Signal Timer.
