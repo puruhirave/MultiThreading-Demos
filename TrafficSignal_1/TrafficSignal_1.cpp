@@ -16,7 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
         std::unique_lock<std::mutex> lk(m);
 
-        //Program stop logic
+        //Logic to Stop Signal Program after some expired counts.
         if (stop_count == MAX_STOP)
             break;
 
