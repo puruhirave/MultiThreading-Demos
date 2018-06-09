@@ -37,7 +37,7 @@ Provided two solutions for this problem.
 TrafficSignal_1: This program is implemented by using only one SIGNAL thread, one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every SIGNAL expiry. The main thread will act as SIGNAL Timer.
 
 ## Multi-threaded Traffic Signal
-TrafficSignal_2: This program is implemented by using multiple SIGNAL threads, so that every thread is numbered with dedicated SIGNAL ID and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every SIGNAL expiry.
+TrafficSignal_2: This program is implemented by using multiple SIGNAL threads. Every thread is numbered with dedicated SIGNAL ID. And one condition variable named 'signalExpired', and Signal status variable 'curr_green_signal' and one more variable 'next_signal_id' to wake up next successive SIGNAL thread to become RED to GREEN on previous SIGNAL's expiry.
 
-Every SIGNAL thread will check there own 'SIGNAL ID' with 'curr_green_signal' variable on SIGNAL expiry.
+Every SIGNAL thread will check there own 'SIGNAL ID' with 'curr_green_signal' variable to print there own status on SIGNAL expiry.
 The main thread will act as SIGNAL Timer.
