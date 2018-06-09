@@ -24,10 +24,10 @@ void signalFun(int sigId)
     {
         unique_lock<mutex> lock(m);
 
-        //Wait for signal expire and next signal's turn.
+        //Wait for signal expiry and next wake up SIGNAL to be Green is the current SIGNAL thread.
         cv.wait(lock, [&sigId]{return ((SignalExpired) && (next_signal_id == sigId)); });
 
-        //Logic to stop signal thread
+        //Logic to stop SIGNAL thread after some expiry counts.
         if (stop_count >= MAX_STOP)
             break;
 
