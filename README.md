@@ -9,7 +9,7 @@ For example: Suppose there are 5 SIGNAL'S, which expires in Round-robin fashion.
    
 This problem is solved by using Mutex and Condition variable. Every Signal will print signal status on expiry.
 ```C
-First Signal-1 is Green then status is printed like,
+Initially SIGNAL-1 is Green then status is printed like,
 
 SIGNAL-1: Green
 SIGNAL-2: Red
