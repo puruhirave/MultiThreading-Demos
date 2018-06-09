@@ -1,30 +1,30 @@
 # MultiThreading-Demos
-Multi-threading use cases explained with different scenarios using all kinds of synchronisation objects like Mutex, Semaphore, Condition variables.
+Multi-threading examples described with different scenarios using all kinds of synchronisation objects like Mutex, Semaphore, Condition variables.
 
 # 1. Traffic Signal
    Problem:  
-   Implement a Traffic signal program with either single threaded or multi-treaded solutions. When first Signal becomes GREEN other Signals will become RED. After the GREEN Signal expires it becomes RED and the successive next Signal will become GREEN and others will become RED.
+   Implement a Traffic Signal program with either single threaded or multi-treaded solutions. When first SIGNAL becomes GREEN other SIGNAL'S will become RED. After the GREEN SIGNAL expires it becomes RED and the successive next SIGNAL will become GREEN and others will become RED.
 
-For example: Suppose there are 5 Signals, which expires in Round-robin fashion. If Signal-1 is expired then it becomes GREEN to RED and Signal-2 becomes RED to GREEN. Same way next successive numbered signal becomes GREEN after expiry.
+For example: Suppose there are 5 SIGNAL'S, which expires in Round-robin fashion. If SIGNAL-1 is expired then it becomes GREEN to RED and SIGNAL-2 becomes RED to GREEN. Same way next successive numbered SIGNAL becomes RED to GREEN after previous expired.
    
 This problem is solved by using Mutex and Condition variable. Every Signal will print signal status on expiry.
 ```C
 First Signal-1 is Green then status is printed like,
 
-Signal-1: Green
-Signal-2: Red
-Signal-3: Red
-Signal-4: Red
-Signal-5: Red
+SIGNAL-1: Green
+SIGNAL-2: Red
+SIGNAL-3: Red
+SIGNAL-4: Red
+SIGNAL-5: Red
 
-After Signal-1 is expired, it will broadcast to all Signals about expiry status and then Signal-2 becomes GREEN 
-and all Signals will print current state.
+After SIGNAL-1 is expired, it will broadcast to all SIGNAL'S about expired status and then SIGNAL-2 becomes GREEN 
+and all SIGNAL'S will print there current state.
 
-Signal-1: Red
-Signal-2: Green
-Signal-3: Red
-Signal-4: Red
-Signal-5: Red
+SIGNAL-1: Red
+SIGNAL-2: Green
+SIGNAL-3: Red
+SIGNAL-4: Red
+SIGNAL-5: Red
 
 ........
 ....
@@ -33,11 +33,11 @@ Signal-5: Red
 
 Provided two solutions for this problem.
 
-## Single threaded Traffic signal
-TrafficSignal_1: This pregram is implemented by using only one Signal thread and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry. The main thread will act as Signal Timer.
+## Single threaded Traffic Signal
+TrafficSignal_1: This program is implemented by using only one SIGNAL thread, one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every SIGNAL expiry. The main thread will act as SIGNAL Timer.
 
-## Multi-threaded Traffic signal
-TrafficSignal_2: This program is implemented by using multiple Signal threads such as each thread for dedicated indexed Signal and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every signal expiry.
+## Multi-threaded Traffic Signal
+TrafficSignal_2: This program is implemented by using multiple SIGNAL threads, so that every thread is numbered with dedicated SIGNAL ID and one condition variable as 'signalExpired' and one more variable 'curr_green_signal' which is increamented at every SIGNAL expiry.
 
-Every signal thread has given 'signalId' which is checked against 'curr_green_signal' after expiry.
-The main thread will act as Signal Timer.
+Every SIGNAL thread has given 'signalId' which is checked against 'curr_green_signal' after expiry.
+The main thread will act as SIGNAL Timer.
