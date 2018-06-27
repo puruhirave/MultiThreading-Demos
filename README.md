@@ -39,10 +39,10 @@ TrafficSignal_1: This program is implemented by using only one SIGNAL thread, on
 ## Multi-threaded Traffic Signal
 TrafficSignal_2: This program is implemented by using multiple SIGNAL threads. Every thread is numbered with dedicated SIGNAL ID  as 'sig_id'. 
 
-Following are other variables used as per their role.
+Following are other variables and their uses.
 
 * 'signalExpired'     => Condition variable used to notify all SIGNALS on expiry.
-* 'curr_green_signal' => Signal status variable used to check if GREEN status while printing state of each SIGNAL.
+* 'curr_green_signal' => Signal status variable used to check if current status is GREEN while printing status of each SIGNAL.
 * 'wakeup_signal_id'  => Variable used to wake up next successive SIGNAL thread to become GREEN on immediate expiry of previous SIGNAL.    Incremented by current expired SIGNAL thread after printing status. 
 
 Every SIGNAL thread will check there own 'SIGNAL ID' with 'curr_green_signal' variable to check & print there own status as GREEN or RED on every SIGNAL expiry.
