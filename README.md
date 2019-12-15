@@ -1,4 +1,4 @@
-# MultiThreading-Demos
+# Multi-Threading Demos
 Multi-threading examples described with different scenarios using all kinds of synchronisation objects like Mutex, Semaphore, Condition variables.
 
 # 1. Traffic Signal
